@@ -121,6 +121,13 @@ body {
     color: var(--branco);
 }
 
+.horario-details {
+    color: #FFFFFF !important; /* Força a cor branca para o dia e hora */
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
 .map-button {
     background-color: var(--cinza-escuro);
     color: var(--branco);

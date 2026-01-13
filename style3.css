@@ -34,7 +34,7 @@ body {
    2. CABEÇALHO (HEADER) - FIXO NO TOPO
    ============================================================ */
 .header-casarao {
-    position: sticky; /* Faz o menu ficar parado no topo ao descer a tela */
+    position: sticky;
     top: 0;
     z-index: 1000;
     background-color: var(--cinza-escuro);
@@ -42,29 +42,39 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra suave abaixo do menu */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .logo {
     color: var(--amarelo-principal);
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Diminuído um pouco para ganhar espaço no celular */
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    white-space: nowrap; 
+}
+
+/* NOVO AJUSTE AQUI */
+.nav-casarao {
+    display: flex;
+    flex-wrap: nowrap; 
+    align-items: center;
 }
 
 .nav-casarao a {
     color: var(--branco);
     text-decoration: none;
-    font-size: 0.75rem; /* Tamanho menor para caber em celulares */
+    font-size: 0.60rem; /* Tamanho pequeno para caber tudo em uma linha no celular */
     font-weight: 600;
-    margin-left: 10px;
+    margin-left: 8px;
+    white-space: nowrap; 
     transition: var(--transicao);
 }
 
 .nav-casarao a:hover {
     color: var(--amarelo-principal);
 }
+
 
 /* ============================================================
    3. BANNER PRINCIPAL (HERO)
@@ -256,25 +266,41 @@ footer {
 .footer-col a { color: #888; text-decoration: none; display: block; margin-bottom: 10px; }
 
 /* ============================================================
+   /* ============================================================
    9. AJUSTES PARA TELAS GRANDES (TABLETS E PCS)
-   Aqui o CSS muda o layout para aproveitar o espaço da tela.
    ============================================================ */
 @media (min-width: 768px) {
-    .header-casarao { padding: 20px 10%; }
-    .nav-casarao a { font-size: 0.9rem; margin-left: 25px; }
+    /* Tudo o que estiver aqui dentro só vale para telas maiores que 768px */
+
+    .header-casarao { 
+        padding: 20px 10%; 
+    }
+
+    .logo { 
+        font-size: 1.5rem; 
+    }
+
+    .nav-casarao a { 
+        font-size: 0.9rem; 
+        margin-left: 25px; 
+    }
 
     .agenda-tarja {
         flex-direction: row; /* Fica em linha no PC */
         justify-content: space-around;
     }
 
-    .hero-content-casarao h1 { font-size: 3.5rem; }
+    .hero-content-casarao h1 { 
+        font-size: 3.5rem; 
+    }
 
     .generosity-section {
         display: flex; /* Divide em duas colunas no PC */
     }
 
-    .generosity-block { flex: 1; }
+    .generosity-block { 
+        flex: 1; 
+    }
 
     .footer-container {
         display: flex;
@@ -282,4 +308,4 @@ footer {
         max-width: 1200px;
         margin: 0 auto;
     }
-}
+} /* <--- Essa última chave fecha a "caixa grande" do @media */

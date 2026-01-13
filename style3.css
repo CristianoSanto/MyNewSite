@@ -1,0 +1,285 @@
+/* ============================================================
+   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
+   Mude as cores aqui para alterar o site todo de uma vez.
+   ============================================================ */
+:root {
+    --amarelo-principal: #FFD700; /* Amarelo ouro */
+    --amarelo-hover: #E6C200;      /* Amarelo um pouco mais escuro para passar o mouse */
+    --cinza-escuro: #1A1A1A;       /* Fundo do header, footer e textos fortes */
+    --cinza-medio: #333333;        /* Tons de fundo secundários */
+    --cinza-claro: #F4F4F4;        /* Fundos de seções claras */
+    --branco: #FFFFFF;
+    --texto-cor: #222222;
+    --transicao: all 0.3s ease;    /* Velocidade das animações/efeitos */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Faz o deslizar da tela ser suave ao clicar nos links */
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--texto-cor);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   2. CABEÇALHO (HEADER) - FIXO NO TOPO
+   ============================================================ */
+.header-casarao {
+    position: sticky; /* Faz o menu ficar parado no topo ao descer a tela */
+    top: 0;
+    z-index: 1000;
+    background-color: var(--cinza-escuro);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Sombra suave abaixo do menu */
+}
+
+.logo {
+    color: var(--amarelo-principal);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-casarao a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 0.75rem; /* Tamanho menor para caber em celulares */
+    font-weight: 600;
+    margin-left: 10px;
+    transition: var(--transicao);
+}
+
+.nav-casarao a:hover {
+    color: var(--amarelo-principal);
+}
+
+/* ============================================================
+   3. BANNER PRINCIPAL (HERO)
+   ============================================================ */
+.hero-casarao {
+    height: 70vh; /* Altura do banner (70% da tela) */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1510590337019-5ef8d3d32116?q=80&w=2070') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content-casarao h1 {
+    color: var(--cinza-escuro);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-content-casarao p {
+    color: var(--branco);
+    font-size: 1rem;
+}
+
+/* ============================================================
+   4. AGENDA (TARJA AMARELA)
+   ============================================================ */
+.agenda-tarja {
+    background-color: var(--cinza-medio);
+    padding: 25px;
+    display: flex;
+    flex-direction: column; /* Um embaixo do outro no celular */
+    gap: 20px;
+    text-align: center;
+}
+
+.horario-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--branco);
+}
+
+.map-button {
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   5. CARROSSEL DE FOTOS
+   ============================================================ */
+.carousel-section {
+    padding: 60px 0;
+    background-color: var(--cinza-claro);
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.carousel-container {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.carousel-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+}
+
+.hidden { display: none; } /* Esconde as fotos que não estão ativas */
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 10px 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active { background-color: var(--amarelo-principal); }
+
+/* ============================================================
+   6. SEÇÕES DE TEXTO (SOBRE / VÍDEO)
+   ============================================================ */
+.content-section-casarao, .video-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.video-section {
+    background-color: var(--cinza-medio);
+}
+
+.white-title { color: var(--amarelo-principal); }
+.white-text { color: var(--branco); margin-bottom: 25px; }
+
+.cta-button-secondary {
+    background-color: #cc0000; /* Cor padrão YouTube */
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* ============================================================
+   7. GENEROSIDADE (DOAÇÕES)
+   ============================================================ */
+.generosity-section {
+    background-color: var(--branco);
+}
+
+.generosity-block {
+    padding: 50px 25px;
+    text-align: center;
+}
+
+.quote-block {
+    background-color: var(--cinza-claro);
+    border-top: 4px solid var(--amarelo-principal);
+}
+
+.cta-button-main {
+    background-color: var(--amarelo-principal);
+    color: var(--cinza-escuro);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.bank-info {
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+}
+
+.bank-details {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* ============================================================
+   8. REDES SOCIAIS E RODAPÉ (FOOTER)
+   ============================================================ */
+.social-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    color: var(--cinza-escuro);
+    margin: 0 15px;
+    transition: var(--transicao);
+}
+
+.social-icons a:hover { color: var(--amarelo-principal); }
+
+footer {
+    background-color: var(--cinza-escuro);
+    color: var(--branco);
+    padding: 60px 20px;
+}
+
+.footer-col { margin-bottom: 40px; }
+.footer-col h4 { color: var(--amarelo-principal); margin-bottom: 20px; }
+.footer-col ul { list-style: none; }
+.footer-col a { color: #888; text-decoration: none; display: block; margin-bottom: 10px; }
+
+/* ============================================================
+   9. AJUSTES PARA TELAS GRANDES (TABLETS E PCS)
+   Aqui o CSS muda o layout para aproveitar o espaço da tela.
+   ============================================================ */
+@media (min-width: 768px) {
+    .header-casarao { padding: 20px 10%; }
+    .nav-casarao a { font-size: 0.9rem; margin-left: 25px; }
+
+    .agenda-tarja {
+        flex-direction: row; /* Fica em linha no PC */
+        justify-content: space-around;
+    }
+
+    .hero-content-casarao h1 { font-size: 3.5rem; }
+
+    .generosity-section {
+        display: flex; /* Divide em duas colunas no PC */
+    }
+
+    .generosity-block { flex: 1; }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
